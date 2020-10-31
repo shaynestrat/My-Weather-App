@@ -1,4 +1,4 @@
-function formatDate(date) {
+function formatDate(timestamp) {
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -35,7 +35,7 @@ function displayWeatherCondition(response) {
 
 function searchCity(city) {
   let apiKey = "5694f43f4dbaf07d0e041cc20cf76b31";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units={units}`;
 
   axios.get(apiUrl).then(displayWeatherCondition);
 }
